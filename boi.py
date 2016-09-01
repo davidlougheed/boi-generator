@@ -22,7 +22,7 @@ from random import randint
 WORD_FILE = "./words.txt"
 
 # Initialize the Flask app.
-app = Flask(__name__)
+application = Flask(__name__)
 
 # The main and only route.
 @app.route("/")
@@ -31,6 +31,3 @@ def main():
 		word_list = list(filter(None, words.read().split("\n")))
 		random_word = word_list[int(randint(0, len(word_list) - 1))]
 		return "{} boi".format(random_word)
-
-if __name__ == "__main__":
-	main()
